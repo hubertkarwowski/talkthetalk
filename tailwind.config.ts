@@ -1,5 +1,9 @@
 import type { Config } from 'tailwindcss'
 
+
+
+
+
 const config: Config = {
   darkMode: ['class'],
   content: [
@@ -10,7 +14,9 @@ const config: Config = {
   theme: {
     extend: {
       spacing: {
-        'global-spacer': '6.25rem',
+        'lg-global-spacer': '12rem',
+        'md-global-spacer': '6rem',
+        'mobile-global-spacer': '2rem',
       },
       colors: {
         background: 'hsl(var(--background))',

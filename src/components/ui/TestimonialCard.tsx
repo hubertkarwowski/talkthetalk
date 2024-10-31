@@ -9,16 +9,13 @@ interface Props {
   review: string
 }
 
-const WIDTH = 560
-const HEIGHT = 300
-
 export const TestimonialCard = ({ fullName, userTitle, review }: Props) => {
   return (
-    <div className="relative">
+    <div className="relative mx-auto">
       <div
-        className={`w-[${WIDTH}px] h-[${HEIGHT}px] border-2 absolute border-solid border-amber-200 top-3 left-3 z-0`}
+        className={`w-full lg:w-[400px] h-[300px] border-2 absolute border-solid border-accent top-3 left-3 z-0`}
       />
-      <Card className={`w-[${WIDTH}px] h-[${HEIGHT}px] z-10 relative`}>
+      <Card className={`w-full lg:w-[400px] h-[300px] z-10 relative`}>
         <CardHeader>
           <div className="px-4">
             <div className="flex gap-1 mb-2">

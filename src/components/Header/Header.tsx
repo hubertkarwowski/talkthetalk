@@ -10,7 +10,7 @@ import { navLinks } from '@/components/Header/navLinks'
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header className="bg-primary py-6 text-primary-foreground px-global-spacer">
+    <header className="bg-primary py-6 text-primary-foreground px-mobile-global-spacer md:px-md-global-spacer lg:px-lg-global-spacer">
       <nav className=" items-center justify-between hidden md:flex">
         <Link href="/talkthetalk/public">LOGO</Link>
         <ul className="flex items-center justify-between text-primary-foreground gap-4 font-semibold">

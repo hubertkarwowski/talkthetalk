@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import abstract1 from '@/../public/abstract_1.svg'
 import { PenIcon } from 'lucide-react'
 
 import { CardTitle } from '@/components/ui/card'
@@ -10,10 +8,8 @@ import { Separator } from '@/components/ui/separator'
 export const Services = () => {
   return (
     <Section title="SERVICES" subtitle="What we do to help you" secondaryColor>
-      <div className="flex flex-col items-center md:flex-row flex-wrap gap-8 lg:justify-between">
+      <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-4">
         <CardWithBorder
-          height="360px"
-          width="280px"
           headerChildren={
             <PenIcon className="mx-auto" size={60} strokeWidth={1} />
           }
@@ -26,8 +22,6 @@ export const Services = () => {
           }
         />
         <CardWithBorder
-          height="360px"
-          width="280px"
           headerChildren={
             <PenIcon className="mx-auto" size={60} strokeWidth={1} />
           }
@@ -40,8 +34,6 @@ export const Services = () => {
           }
         />
         <CardWithBorder
-          height="360px"
-          width="280px"
           headerChildren={
             <PenIcon className="mx-auto" size={60} strokeWidth={1} />
           }

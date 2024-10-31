@@ -11,7 +11,11 @@ import { Section } from '@/components/ui/Section'
 
 export const Faq = () => {
   return (
-    <Section title="FAQ" subtitle="Got questions? We have answers!">
+    <Section
+      title="FAQ"
+      subtitle="Got questions? We have answers!"
+      secondaryColor
+    >
       <Image
         width={200}
         height={200}
@@ -22,7 +26,7 @@ export const Faq = () => {
       <Accordion
         type="single"
         collapsible
-        className="w-full bg-secondary text-secondary-foreground p-6"
+        className="w-full bg-secondary text-secondary-foreground p-6 lg:p-24"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>

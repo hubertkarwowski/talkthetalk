@@ -19,7 +19,7 @@ export const Section = ({
 }: Props) => {
   return (
     <section
-      className={`px-[100px] py-24 relative ${secondaryColor ? 'bg-secondary' : 'bg-primary'}`}
+      className={`px-mobile-global-spacer md:px-md-global-spacer lg:px-lg-global-spacer py-20 relative ${secondaryColor ? 'bg-secondary' : 'bg-primary'}`}
     >
       {title && (
         <div className="flex items-center">
