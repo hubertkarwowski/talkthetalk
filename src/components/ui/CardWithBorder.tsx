@@ -16,13 +16,13 @@ export const CardWithBorder = ({
   return (
     <div className="relative">
       <div
-        className={`w-full h-[280px] lg:w-[280px] lg:h-[360px] border-2 absolute border-solid border-accent top-3 left-3 z-0`}
+        className={`w-full h-[280px] lg:w-[280px] lg:h-[380px] border-2 absolute border-solid border-accent top-3 left-3 z-0`}
       />
       <Card
-        className={`w-full h-[280px] lg:w-[280px] lg:h-[360px] z-10 relative`}
+        className={`w-full h-[280px] lg:w-[280px] lg:h-[380px] z-10 relative`}
       >
         <CardHeader>{headerChildren}</CardHeader>
-        <CardContent className="text-md">{contentChildren}</CardContent>
+        <CardContent className="text-sm">{contentChildren}</CardContent>
         {footerChildren && <CardFooter>{footerChildren}</CardFooter>}
       </Card>
     </div>

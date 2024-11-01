@@ -1,19 +1,22 @@
 import Image from 'next/image'
-import abstract1 from '@/../public/abstract_1.svg'
 
 import { Section } from '@/components/ui/Section'
 import { TestimonialCard } from '@/components/ui/TestimonialCard'
 
+import abstract1 from '../../../../public/abstract_1.svg'
+
 export const Testimonials = () => {
   return (
     <Section title="TESTIMONIALS" subtitle="Hear what our clients say">
-      <Image
-        width={200}
-        height={200}
-        src={abstract1}
-        alt="abstract particles"
-        className="absolute -top-10 right-10"
-      />
+      <div className={`absolute w-[100px] md:w-[150px] -top-10 right-10`}>
+        <Image src={abstract1} alt="abstract particles" />
+      </div>
+      <div
+        className={`absolute w-[100px] md:w-[150px] -bottom-10 left-10 z-10`}
+      >
+        <Image src={abstract1} alt="abstract particles" />
+      </div>
+
       <p className="-mt-10">
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim.

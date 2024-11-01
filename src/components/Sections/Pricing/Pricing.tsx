@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs'
 import { CheckCircle2 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Section } from '@/components/ui/Section'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 const CheckItem = ({ text }: { text: string }) => (
   <div className="flex gap-2">
@@ -57,7 +57,7 @@ export const Pricing = () => {
       </Tabs>
       <div className="flex w-full mx-auto">
         <Button className="mt-24 mx-auto" size="lg" asChild>
-          <Link href="/">Check the pricing plan</Link>
+          <Link href="/public">Check the pricing plan</Link>
         </Button>
       </div>
     </Section>

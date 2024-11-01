@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import '../globals.css'
 
 import Footer from '@/components/ui/Footer'
-import { Header } from '@/components/Header/Header'
+import { Header } from '@/components/Sections/Header/Header'
 import { playfairDisplay, poppins } from '@/app/fonts'
 
 //todo: rewrite metadata

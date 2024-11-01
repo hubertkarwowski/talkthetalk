@@ -1,9 +1,10 @@
 import Image from 'next/image'
-import abstract1 from '@/../public/abstract_1.svg'
-import model from '@/../public/model.jpg'
 
 import { Button } from '@/components/ui/button'
 import { Section } from '@/components/ui/Section'
+
+import abstract1 from '../../../../public/abstract_1.svg'
+import model from '../../../../public/model.jpg'
 
 export const Hero = () => {
   return (

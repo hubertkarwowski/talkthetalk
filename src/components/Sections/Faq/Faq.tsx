@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import abstract1 from '@/../public/abstract_1.svg'
 
 import {
   Accordion,
@@ -9,6 +8,8 @@ import {
 } from '@/components/ui/accordion'
 import { Section } from '@/components/ui/Section'
 
+import abstract1 from '../../../../public/abstract_1.svg'
+
 export const Faq = () => {
   return (
     <Section
@@ -16,13 +17,9 @@ export const Faq = () => {
       subtitle="Got questions? We have answers!"
       secondaryColor
     >
-      <Image
-        width={200}
-        height={200}
-        src={abstract1}
-        alt="abstract particles"
-        className="absolute -top-10 right-10"
-      />
+      <div className={`absolute w-[100px] md:w-[150px] -top-24 left-10 z-10`}>
+        <Image src={abstract1} alt="abstract particles" />
+      </div>
       <Accordion
         type="single"
         collapsible

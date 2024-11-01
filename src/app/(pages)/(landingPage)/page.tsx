@@ -1,10 +1,10 @@
 import { Contact } from '@/components/ui/Contact'
-import { AboutUs } from '@/components/AboutUs/AboutUs'
-import { Faq } from '@/components/Faq/Faq'
-import { Hero } from '@/components/Hero/Hero'
-import { Pricing } from '@/components/Pricing/Pricing'
-import { Services } from '@/components/Services/Services'
-import { Testimonials } from '@/components/Testimonials/Testimonials'
+import { AboutMe } from '@/components/Sections/AboutMe/AboutMe'
+import { Faq } from '@/components/Sections/Faq/Faq'
+import { Hero } from '@/components/Sections/Hero/Hero'
+import { Pricing } from '@/components/Sections/Pricing/Pricing'
+import { Services } from '@/components/Sections/Services/Services'
+import { Testimonials } from '@/components/Sections/Testimonials/Testimonials'
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Testimonials />
-      <AboutUs />
+      <AboutMe />
       <Pricing />
       <Faq />
       <Contact />

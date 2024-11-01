@@ -1,25 +1,23 @@
 'use client'
 
+import { useMemo } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Facebook, Instagram } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { navLinks } from '@/components/Header/navLinks'
+import { navLinks } from '@/components/Sections/Header/navLinks'
 
 export default function Footer() {
-  const getCurrentYear = new Date().getFullYear()
+  const getCurrentYear = useMemo(() => new Date().getUTCFullYear(), [])
 
   const pathname = usePathname()
 
   const isActive = (href: string) => pathname === href
 
   return (
-    <footer
-      className="bg-primary text-primary-foreground p-12 text-center"
-      style={{ borderTop: '4px solid #87624A' }}
-    >
+    <footer className="bg-primary text-primary-foreground p-12 text-center px-mobile-global-spacer md:px-md-global-spacer lg:px-lg-global-spacer">
       <div className="flex flex-col items-center gap-12 py-6 lg:flex-row lg:text-left lg:justify-between">
         <div className="lg:w-[50ch]">
           <h2 className="text-xl">Header</h2>
@@ -34,7 +32,12 @@ export default function Footer() {
           <ul className="mt-4 text-sm flex flex-col items-center justify-between text-primary-foreground gap-4 font-semibold lg:text-left lg:items-start">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <Link href={link.link}>{link.title}</Link>
+                <Link
+                  href={link.link}
+                  className={`${pathname === link.link ? 'font-bold underline underline-offset-8' : ''}`}
+                >
+                  {link.title}
+                </Link>
               </li>
             ))}
           </ul>

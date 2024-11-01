@@ -23,11 +23,11 @@ export const ContactForm = () => {
         <div>
           <span className="flex items-center">
             <PhoneIcon className="mr-2" />
-            +123 456 789 101
+            +48 536 056 177
           </span>
           <span className="flex items-center mt-2">
             <Mail className="mr-2" />
-            someemail@gmail.com
+            talkthetalktutoringpl@gmail.com
           </span>
           <span className="flex items-center mt-2">
             <LocateFixedIcon className="mr-2" />
@@ -50,7 +50,7 @@ export const ContactForm = () => {
               errors={state.errors}
             />
           </div>
-          <div>
+          <div className="lg:w-1/2">
             <Label htmlFor="phone">Phone Number</Label>
             <Input id="phone" name="phone" />
             <ValidationError
