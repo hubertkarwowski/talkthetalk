@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import { Contact } from '@/components/ui/Contact'
 import { Section } from '@/components/ui/Section'
 import { Services } from '@/components/Sections/Services/Services'
 
@@ -81,6 +82,7 @@ usług?"
         </div>
       </Section>
       <Services />
+      <Contact />
     </div>
   )
 }

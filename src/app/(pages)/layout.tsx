@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import '../globals.css'
 
 import Footer from '@/components/ui/Footer'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { Header } from '@/components/Sections/Header/Header'
 import { playfairDisplay, poppins } from '@/app/fonts'
 
@@ -66,6 +67,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <Header />
         {children}
+        <ScrollToTop />
         <Footer />
       </body>
     </html>

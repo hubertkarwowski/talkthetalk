@@ -1,5 +1,6 @@
 import { Contact } from '@/components/ui/Contact'
 import { AboutMe } from '@/components/Sections/AboutMe/AboutMe'
+import { Blog } from '@/components/Sections/Blog/Blog'
 import { Faq } from '@/components/Sections/Faq/Faq'
 import { Hero } from '@/components/Sections/Hero/Hero'
 import { Pricing } from '@/components/Sections/Pricing/Pricing'
@@ -15,7 +16,8 @@ export default function Home() {
       <AboutMe />
       <Pricing />
       <Faq />
-      <Contact />
+      <Blog />
+      <Contact isSecondary />
     </>
   )
 }

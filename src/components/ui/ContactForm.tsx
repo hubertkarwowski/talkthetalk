@@ -14,13 +14,13 @@ export const ContactForm = () => {
     return <p>Thanks for joining!</p>
   }
   return (
-    <div className="bg-secondary text-secondary-foreground p-2 lg:flex lg:flex-row lg:h-[600px]">
-      <div className="flex flex-col justify-between text-center bg-gray-700 p-4 lg:text-left lg:w-[40%]">
+    <div className="bg-secondary text-secondary-foreground p-2 xl:flex xl:flex-row xl:h-[600px] xl:max-w-[1000px] xl:mx-auto relative">
+      <div className="flex flex-col justify-between text-center bg-gray-700 p-8 lg:text-left xl:w-[40%]">
         <div>
-          <h2>Contact Form</h2>
+          <h2 className="text-3xl font-semibold">Contact Form</h2>
           <p>Say something to start a live chat!</p>
         </div>
-        <div>
+        <div className="space-y-6 mt-12">
           <span className="flex items-center">
             <PhoneIcon className="mr-2" />
             +48 536 056 177
@@ -38,10 +38,10 @@ export const ContactForm = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="mt-12 lg:lg:w-[60%] px-4 space-y-12"
+        className="mt-12 xl:w-[60%] px-4 space-y-12 relative"
       >
-        <div className="lg:flex lg:justify-between gap-2">
-          <div className="lg:w-1/2">
+        <div className="xl:flex xl:justify-between gap-2 relative">
+          <div className="xl:w-1/2">
             <Label htmlFor="fullName">Full Name</Label>
             <Input id="fullName" type="text" name="fullName" />
             <ValidationError
@@ -50,7 +50,7 @@ export const ContactForm = () => {
               errors={state.errors}
             />
           </div>
-          <div className="lg:w-1/2">
+          <div className="xl:w-1/2">
             <Label htmlFor="phone">Phone Number</Label>
             <Input id="phone" name="phone" />
             <ValidationError

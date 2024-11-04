@@ -18,6 +18,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground p-12 text-center px-mobile-global-spacer md:px-md-global-spacer lg:px-lg-global-spacer">
+      <Separator />
       <div className="flex flex-col items-center gap-12 py-6 lg:flex-row lg:text-left lg:justify-between">
         <div className="lg:w-[50ch]">
           <h2 className="text-xl">Header</h2>

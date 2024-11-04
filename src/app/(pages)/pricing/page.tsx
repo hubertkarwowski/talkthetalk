@@ -1,15 +1,16 @@
+import { Contact } from '@/components/ui/Contact'
 import { Section } from '@/components/ui/Section'
 import {
   Table,
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
 import { Pricing } from '@/components/Sections/Pricing/Pricing'
+import { Services } from '@/components/Sections/Services/Services'
 
 export default function AboutMe() {
   const lessons = [
@@ -60,6 +61,8 @@ export default function AboutMe() {
         </Table>
       </Section>
       <Pricing />
+      <Services />
+      <Contact />
     </div>
   )
 }
