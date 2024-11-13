@@ -31,12 +31,12 @@ export const ScrollToTop = () => {
 
   return (
     <div
-      className={`border-[2px] border-primary-foreground fixed bottom-10 right-10 cursor-pointer bg-primary p-4 outline-none transition  duration-200 ease-in-out hover:scale-110 z-[9999] ${
+      className={`border-[2px] border-primary-foreground fixed bottom-10 right-10 cursor-pointer bg-accent p-4 outline-none transition  duration-200 ease-in-out hover:scale-110 z-[9999] ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       onClick={scrollToTop}
     >
-      <ChevronUp size={34} />
+      <ChevronUp size={34} className="text-accent-foreground" />
     </div>
   )
 }

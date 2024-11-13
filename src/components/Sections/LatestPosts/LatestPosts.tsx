@@ -1,5 +1,5 @@
-import { CardWithBorder } from '@/components/ui/CardWithBorder'
-import { Section } from '@/components/ui/Section'
+import { CardWithBorder } from '@/components/customUi/CardWithBorder'
+import { Section } from '@/components/customUi/Section'
 
 export const LatestPosts = () => {
   return (

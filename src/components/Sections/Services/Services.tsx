@@ -1,9 +1,12 @@
+import Image from 'next/image'
 import { PenIcon } from 'lucide-react'
 
 import { CardTitle } from '@/components/ui/card'
-import { CardWithBorder } from '@/components/ui/CardWithBorder'
-import { Section } from '@/components/ui/Section'
 import { Separator } from '@/components/ui/separator'
+import { CardWithBorder } from '@/components/customUi/CardWithBorder'
+import { Section } from '@/components/customUi/Section'
+
+import abstract1 from '../../../../public/abstract_1.svg'
 
 const listOfServices = [
   {
@@ -36,6 +39,11 @@ const listOfServices = [
 export const Services = () => {
   return (
     <Section title="SERVICES" subtitle="What we do to help you" secondaryColor>
+      <div
+        className={`absolute w-[100px] md:w-[150px] -bottom-28 right-10 z-10`}
+      >
+        <Image src={abstract1} alt="abstract particles" />
+      </div>
       <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-4">
         {listOfServices.map((service) => (
           <CardWithBorder

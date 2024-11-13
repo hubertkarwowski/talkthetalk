@@ -11,12 +11,14 @@ type BlogCardProps = {
   title: string
   description: string
   date: string
+  link: string
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({
   title,
   description,
   date,
+  link,
 }) => {
   return (
     <div className="relative">
@@ -24,8 +26,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         className={`w-full h-full border-2 absolute border-solid border-rose-400 top-2 left-2 z-0`}
       />
       <Card className="mx-auto flex w-[250px] flex-col md:w-[345px] hover:shadow-pink-300 duration-200 relative">
-        {/*<Link href={`/blog/${post.currentSlug}`}>*/}
-        <Link href={`/`}>
+        <Link href={`/blog/${link}`}>
           <CardHeader className="relative">
             <Image
               src={model}

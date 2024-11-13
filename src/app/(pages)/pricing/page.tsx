@@ -1,5 +1,5 @@
-import { Contact } from '@/components/ui/Contact'
-import { Section } from '@/components/ui/Section'
+import Image from 'next/image'
+
 import {
   Table,
   TableBody,
@@ -9,8 +9,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Contact } from '@/components/customUi/Contact'
+import { Section } from '@/components/customUi/Section'
 import { Pricing } from '@/components/Sections/Pricing/Pricing'
 import { Services } from '@/components/Sections/Services/Services'
+
+import abstract1 from '../../../../public/abstract_1.svg'
 
 export default function AboutMe() {
   const lessons = [
@@ -32,19 +36,24 @@ export default function AboutMe() {
     },
   ]
   return (
-    <div className="pt-12">
+    <div>
       <Section
         title="Pricing Card"
         subtitle="Here is our pricing card"
         secondaryColor
       >
+        <div
+          className={`absolute w-[100px] md:w-[150px] -bottom-28 right-10 z-10`}
+        >
+          <Image src={abstract1} alt="abstract particles" />
+        </div>
         <Table className="max-w-[700px] mx-auto">
           <TableCaption>
             Zajęcia odbywają się online i wystawiamy faktury.
           </TableCaption>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">Lesson Type</TableHead>
+              <TableHead>Lesson Type</TableHead>
               <TableHead className="text-right">Price</TableHead>
             </TableRow>
           </TableHeader>

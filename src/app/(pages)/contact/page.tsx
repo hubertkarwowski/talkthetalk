@@ -1,12 +1,10 @@
-import { ContactForm } from '@/components/ui/ContactForm'
-import { Section } from '@/components/ui/Section'
+import { ContactForm } from '@/components/customUi/ContactForm'
+import { Section } from '@/components/customUi/Section'
 
 export default function AboutMe() {
   return (
-    <div className="pt-24">
-      <Section title="CONTACT" subtitle="Are you ready for a lesson?">
-        <ContactForm />
-      </Section>
-    </div>
+    <Section title="CONTACT" subtitle="Are you ready for a lesson?">
+      <ContactForm />
+    </Section>
   )
 }

@@ -5,8 +5,7 @@ interface Props {
   children: ReactNode
   title?: string
   subtitle?: string
-  subtitleClassNames?: string
-  titleClassNames?: string
+  wrapperClassName?: string
 }
 
 export const Section = ({
@@ -14,8 +13,7 @@ export const Section = ({
   children,
   title,
   subtitle,
-  subtitleClassNames,
-  titleClassNames,
+  wrapperClassName,
 }: Props) => {
   return (
     <section
@@ -27,7 +25,7 @@ export const Section = ({
             className={`w-8 h-0.5 mr-2 ${secondaryColor ? 'bg-accent-foreground' : 'bg-accent'}`}
           />
           <p
-            className={`${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'} ${titleClassNames} text-lg font-semibold uppercase tracking-widest
+            className={`${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'} text-lg font-semibold uppercase tracking-widest
  `}
           >
             {title}
@@ -36,13 +34,13 @@ export const Section = ({
       )}
       {subtitle && (
         <h3
-          className={`${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'} ${subtitleClassNames} text-3xl font-bold`}
+          className={`${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'} text-3xl font-bold`}
         >
           {subtitle}
         </h3>
       )}
       <div
-        className={`mt-12 ${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'}`}
+        className={`mt-12 max-w-[1000px] mx-auto ${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'} ${wrapperClassName}`}
       >
         {children}
       </div>

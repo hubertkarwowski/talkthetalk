@@ -14,7 +14,7 @@ export const ContactForm = () => {
     return <p>Thanks for joining!</p>
   }
   return (
-    <div className="bg-secondary text-secondary-foreground p-2 xl:flex xl:flex-row xl:h-[600px] xl:max-w-[1000px] xl:mx-auto relative">
+    <div className="bg-secondary text-secondary-foreground p-2 xl:flex xl:flex-row xl:h-[600px] relative">
       <div className="flex flex-col justify-between text-center bg-gray-700 p-8 lg:text-left xl:w-[40%]">
         <div>
           <h2 className="text-3xl font-semibold">Contact Form</h2>

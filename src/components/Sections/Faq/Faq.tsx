@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { Section } from '@/components/ui/Section'
+import { Section } from '@/components/customUi/Section'
 
 import abstract1 from '../../../../public/abstract_1.svg'
 

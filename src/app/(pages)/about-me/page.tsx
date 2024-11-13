@@ -1,16 +1,22 @@
 import Image from 'next/image'
 
-import { Contact } from '@/components/ui/Contact'
-import { Section } from '@/components/ui/Section'
+import { Contact } from '@/components/customUi/Contact'
+import { Section } from '@/components/customUi/Section'
 import { Services } from '@/components/Sections/Services/Services'
 
+import abstract1 from '../../../../public/abstract_1.svg'
 import model from '../../../../public/model.jpg'
 
 export default function AboutMePage() {
   return (
-    <div className="pt-12">
+    <div>
       <Section title="Lorem ipsum" subtitle="lorem ipsum" secondaryColor>
         <div className="md:flex md:justify-between md:items-center md:gap-8">
+          <div
+            className={`absolute w-[100px] md:w-[150px] -bottom-28 right-10 z-10`}
+          >
+            <Image src={abstract1} alt="abstract particles" />
+          </div>
           <div className="md:w-1/2">
             <p>
               Jestem native speakerem języka angielskiego oraz akredytowanym
@@ -47,6 +53,11 @@ usług?"
         subtitle="lorem ipsum"
       >
         <div className="md:flex md:flex-row-reverse md:justify-between md:items-center md:gap-8">
+          <div
+            className={`absolute w-[100px] md:w-[150px] -bottom-10 left-10 z-10`}
+          >
+            <Image src={abstract1} alt="abstract particles" />
+          </div>
           <div className="md:w-1/2 space-y-4">
             <p>
               Zajęci profesjonaliści: Dorośli, którzy cenią swój czas i

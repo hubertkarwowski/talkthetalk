@@ -2,8 +2,13 @@ import type { Metadata } from 'next'
 
 import '../globals.css'
 
-import Footer from '@/components/ui/Footer'
-import { ScrollToTop } from '@/components/ui/ScrollToTop'
+import { draftMode } from 'next/headers'
+import { SanityLive } from '@/sanity/lib/live'
+import { VisualEditing } from 'next-sanity'
+
+import { DisableDraftMode } from '@/components/customUi/DisableDraftMode'
+import Footer from '@/components/customUi/Footer'
+import { ScrollToTop } from '@/components/customUi/ScrollToTop'
 import { Header } from '@/components/Sections/Header/Header'
 import { playfairDisplay, poppins } from '@/app/fonts'
 
@@ -54,7 +59,7 @@ export const metadata: Metadata = {
   ],
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -66,9 +71,16 @@ export default function RootLayout({
     >
       <body className={`antialiased`}>
         <Header />
-        {children}
+        <div className="pt-[10.1rem]">{children}</div>
         <ScrollToTop />
         <Footer />
+        <SanityLive />
+        {(await draftMode()).isEnabled && (
+          <>
+            <DisableDraftMode />
+            <VisualEditing />
+          </>
+        )}
       </body>
     </html>
   )

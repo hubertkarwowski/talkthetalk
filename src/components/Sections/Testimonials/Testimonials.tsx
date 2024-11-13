@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import { Section } from '@/components/ui/Section'
-import { TestimonialCard } from '@/components/ui/TestimonialCard'
+import { Section } from '@/components/customUi/Section'
+import { TestimonialCard } from '@/components/customUi/TestimonialCard'
 
 import abstract1 from '../../../../public/abstract_1.svg'
 

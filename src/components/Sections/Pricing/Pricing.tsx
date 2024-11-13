@@ -3,8 +3,8 @@ import { Book, CircleCheck, Sparkles } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Section } from '@/components/ui/Section'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Section } from '@/components/customUi/Section'
 
 const CheckItem = ({ text }: { text: string }) => (
   <div className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export const Pricing = () => {
     <Section title="Pricing Card" subtitle="Here is our pricing card">
       <Tabs defaultValue={plans[1].id} className="relative">
         <div
-          className={`w-full mt-20 h-[440px] border-2 absolute border-solid border-rose-400 top-6 left-6 z-0`}
+          className={`w-full mt-20 h-[440px] border-2 absolute border-solid border-accent top-6 left-6 z-0`}
         />
         <TabsList className="grid w-full grid-cols-2">
           {plans.map((plan) => (
