@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "extract": "npx sanity@latest schema extract",
+    "generate": "npx sanity@latest typegen generate"
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",

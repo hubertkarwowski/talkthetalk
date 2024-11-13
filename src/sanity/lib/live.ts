@@ -1,13 +1,22 @@
-import { client } from '@/sanity/lib/client'
-import { defineLive } from 'next-sanity'
+import { createClient, defineLive } from 'next-sanity'
 
-// set your viewer token
+
+
+
+
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: true,
+  apiVersion: 'vX', // Target the experimental API version
+  stega: { studioUrl: '/studio' },
+})
+
 const token = process.env.SANITY_API_READ_TOKEN
 if (!token) {
   throw new Error('Missing SANITY_API_READ_TOKEN')
 }
 
-// export the sanityFetch helper and the SanityLive component
 export const { sanityFetch, SanityLive } = defineLive({
   client,
   serverToken: token,

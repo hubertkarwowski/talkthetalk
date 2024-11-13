@@ -5,7 +5,7 @@ import { Clock } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 
-import model from '../../../public/placeholder.png'
+import model from '../../../public/model.jpg'
 
 type BlogCardProps = {
   title: string

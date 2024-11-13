@@ -1,19 +1,25 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import { sanityFetch } from '@/sanity/lib/live'
-import { POST_QUERY, POSTS_QUERY } from '@/sanity/lib/queries'
+import { POST_QUERY } from '@/sanity/lib/queries'
 import { PortableText } from '@portabletext/react'
 import { QueryParams } from 'next-sanity'
 
-export async function generateStaticParams() {
-  const posts = await client.fetch(POSTS_QUERY)
-
-  return posts.map((post) => ({
-    slug: post?.slug?.current,
-  }))
+export async function generateMetadata(): Promise<Metadata> {
+  const { data } = await sanityFetch({
+    query: POST_QUERY,
+    // Metadata should never contain stega
+    stega: false,
+  })
+  return {
+    title: {
+      template: `%s | ${data?.title}`,
+      default: data?.title || 'Blog',
+    },
+  }
 }
 
 export default async function Page({ params }: { params: QueryParams }) {
@@ -25,7 +31,7 @@ export default async function Page({ params }: { params: QueryParams }) {
     return notFound()
   }
   return (
-    <main className="container mx-auto prose prose-lg p-4">
+    <div className="container mx-auto prose prose-lg p-4">
       {data.title ? <h1>{data.title}</h1> : null}
       {data.mainImage?.asset?._ref ? (
         <Image
@@ -39,6 +45,6 @@ export default async function Page({ params }: { params: QueryParams }) {
       {data.body ? <PortableText value={data.body} /> : null}
       <hr />
       <Link href="/">&larr; Return home</Link>
-    </main>
+    </div>
   )
 }
