@@ -1,12 +1,6 @@
-import Image from 'next/image'
-import { PenIcon } from 'lucide-react'
-
 import { CardTitle } from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
 import { CardWithBorder } from '@/components/customUi/CardWithBorder'
 import { Section } from '@/components/customUi/Section'
-
-import abstract1 from '../../../../public/abstract_1.svg'
 
 const listOfServices = [
   {
@@ -28,36 +22,17 @@ const listOfServices = [
       'ósmoklasisty, Matura, FCE, CAE, CPE, IELTS i innych. Osiągnij sukces dzięki ukierunkowanemu\n' +
       'przygotowaniu.',
   },
-  {
-    title: 'Angielski akademicki i zawodowy',
-    description:
-      'Nadrobisz zaległości w szkole lub na uczelni, lub ulepszysz swój\n' +
-      'angielski biznesowy, zdobywając praktyczne umiejętności gotowe do pracy',
-  },
 ]
 
 export const Services = () => {
   return (
     <Section title="SERVICES" subtitle="What we do to help you" secondaryColor>
-      <div
-        className={`absolute w-[100px] md:w-[150px] -bottom-28 right-10 z-10`}
-      >
-        <Image src={abstract1} alt="abstract particles" />
-      </div>
       <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-4">
         {listOfServices.map((service) => (
           <CardWithBorder
             key={service.title}
-            headerChildren={
-              <PenIcon className="mx-auto" size={60} strokeWidth={1} />
-            }
-            contentChildren={
-              <>
-                <Separator className="mb-4" />
-                <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
-                <p>{service.description}</p>
-              </>
-            }
+            headerChildren={<CardTitle>{service.title}</CardTitle>}
+            contentChildren={<p>{service.description}</p>}
           />
         ))}
       </div>

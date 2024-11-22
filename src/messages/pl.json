@@ -1,0 +1,10 @@
+{
+  "header": {
+    "switch": "Zmień język",
+    "pl": "Polski",
+    "en": "Angielski"
+  },
+  "hero": {
+    "heading": "polski heading"
+  }
+}

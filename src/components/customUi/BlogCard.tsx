@@ -1,60 +1,54 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { urlFor } from '@/sanity/lib/image'
 import { Clock } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
-import model from '../../../public/model.jpg'
+import { POSTS_EN_QUERYResult, POSTS_QUERYResult } from '../../../sanity.types'
 
 type BlogCardProps = {
-  title: string
-  description: string
-  date: string
-  link: string
+  data: POSTS_QUERYResult[number] | POSTS_EN_QUERYResult[number]
 }
 
-export const BlogCard: React.FC<BlogCardProps> = ({
-  title,
-  description,
-  date,
-  link,
-}) => {
+export const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
   return (
-    <div className="relative">
-      <div
-        className={`w-full h-full border-2 absolute border-solid border-rose-400 top-2 left-2 z-0`}
-      />
-      <Card className="mx-auto flex w-[250px] flex-col md:w-[345px] hover:shadow-pink-300 duration-200 relative">
-        <Link href={`/blog/${link}`}>
-          <CardHeader className="relative">
+    <Card className="mx-auto flex w-[250px] flex-col md:w-[345px] hover:shadow-pink-300 duration-200 relative border-8 border-accent">
+      <Link href={`/src/app/%5Blocale%5D/blog/${data.slug?.current}`}>
+        <CardHeader className="relative">
+          {data.mainImage && (
             <Image
-              src={model}
-              // src={urlFor(post.titleImage).url()}
+              src={urlFor(data.mainImage).url()}
               alt="image"
               className="mx-auto rounded-lg object-cover"
+              width={300}
+              height={200}
             />
-          </CardHeader>
-
-          <CardContent className="flex flex-col">
-            <div>
-              <Badge variant="secondary" className="w-100 ">
-                <Clock size={14} className="mr-2" />
-                <span>{date}</span>
-              </Badge>
-            </div>
-            <div className="mt-2">
-              <Badge className="mr-2 hover:cursor-default">xDDD</Badge>
-            </div>
-            <h3 className="fw-bold mt-2 line-clamp-1 text-lg font-medium">
-              {title}
-            </h3>
-            <p className="mt-2  line-clamp-4 h-[100px] text-sm ">
-              {description}
-            </p>
-          </CardContent>
-        </Link>
-      </Card>
-    </div>
+          )}
+        </CardHeader>
+        <CardContent className="flex flex-col">
+          <h3 className="fw-bold mt-2 line-clamp-1 text-lg font-medium">
+            {data.title}
+          </h3>
+          <p className="mt-2  line-clamp-4 h-[100px] text-sm ">
+            {data.description}
+          </p>
+        </CardContent>
+        <CardFooter className="py-2 flex items-center justify-end gap-2 ">
+          <div>
+            <Badge className="w-100 bg-secondary hover:cursor-default">
+              <Clock size={14} className="mr-2" />
+              <span>{data.publishedAt}</span>
+            </Badge>
+          </div>
+          <div>
+            <Badge className="mr-2 hover:cursor-default bg-secondary">
+              xDDD
+            </Badge>
+          </div>
+        </CardFooter>
+      </Link>
+    </Card>
   )
 }

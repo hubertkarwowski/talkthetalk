@@ -1,4 +1,4 @@
-import { sanityFetch } from '@/sanity/lib/live'
+import { sanityFetch } from '@/sanity/lib/client'
 import { POSTS_QUERY } from '@/sanity/lib/queries'
 
 import { BlogCard } from '@/components/customUi/BlogCard'
@@ -12,18 +12,10 @@ export default async function Blog() {
   return (
     <div>
       <Section title="Blog" subtitle="some subtitle text" secondaryColor>
-        {posts.data.map(
+        {posts.map(
           (post) =>
             post.slug?.current &&
-            post.title && (
-              <BlogCard
-                key={post._id}
-                title={post.title!}
-                date="2020-10-10"
-                description="lorksf sdlkfs dkljd sflkj sdflkms dfl ksm"
-                link={post.slug.current}
-              />
-            )
+            post.title && <BlogCard data={post} key={post._id} />
         )}
       </Section>
       <Contact />

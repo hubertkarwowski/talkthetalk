@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 
 import '../globals.css'
 
-import { draftMode } from 'next/headers'
-import { SanityLive } from '@/sanity/lib/live'
-import { VisualEditing } from 'next-sanity'
+import { notFound } from 'next/navigation'
+import { routing } from '@/i18n/routing'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 
-import { DisableDraftMode } from '@/components/customUi/DisableDraftMode'
 import Footer from '@/components/customUi/Footer'
 import { ScrollToTop } from '@/components/customUi/ScrollToTop'
 import { Header } from '@/components/Sections/Header/Header'
@@ -59,28 +59,36 @@ export const metadata: Metadata = {
   ],
 }
 
+interface Props {
+  locale: 'en' | 'pl'
+}
+
 export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode
+  params: Props
 }>) {
+  const { locale } = await params
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound()
+  }
+  const messages = await getMessages()
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${poppins.variable} ${playfairDisplay.variable}`}
     >
       <body className={`antialiased`}>
-        <Header />
-        <div className="pt-[10.1rem]">{children}</div>
-        <ScrollToTop />
-        <Footer />
-        <SanityLive />
-        {(await draftMode()).isEnabled && (
-          <>
-            <DisableDraftMode />
-            <VisualEditing />
-          </>
-        )}
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          <div className="pt-[10.1rem]">{children}</div>
+          <ScrollToTop />
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

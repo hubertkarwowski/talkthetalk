@@ -1,8 +1,7 @@
 import type { NextConfig } from 'next'
+import createNextIntlPlugin from 'next-intl/plugin'
 
-
-
-
+const withNextIntl = createNextIntlPlugin()
 
 const nextConfig: NextConfig = {
   crossOrigin: 'anonymous',
@@ -20,4 +19,4 @@ const nextConfig: NextConfig = {
   // ...other config settings
 }
 
-export default nextConfig
+export default withNextIntl(nextConfig)

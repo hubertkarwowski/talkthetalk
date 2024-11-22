@@ -20,7 +20,7 @@ export const Section = ({
       className={`px-mobile-global-spacer md:px-md-global-spacer lg:px-lg-global-spacer py-20 relative ${secondaryColor ? 'bg-secondary' : 'bg-primary'}`}
     >
       {title && (
-        <div className="flex items-center">
+        <div className="flex items-center justify-center text-center">
           <div
             className={`w-8 h-0.5 mr-2 ${secondaryColor ? 'bg-accent-foreground' : 'bg-accent'}`}
           />
@@ -30,11 +30,14 @@ export const Section = ({
           >
             {title}
           </p>
+          <div
+            className={`w-8 h-0.5 ml-2 ${secondaryColor ? 'bg-accent-foreground' : 'bg-accent'}`}
+          />
         </div>
       )}
       {subtitle && (
         <h3
-          className={`${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'} text-3xl font-bold`}
+          className={`${secondaryColor ? 'text-secondary-foreground' : 'text-primary-foreground'} text-3xl font-bold text-center`}
         >
           {subtitle}
         </h3>

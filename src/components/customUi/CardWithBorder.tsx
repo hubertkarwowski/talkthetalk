@@ -1,29 +1,30 @@
 import { ReactNode } from 'react'
 
+import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Separator } from '@/components/ui/separator'
 
 interface Props {
   headerChildren?: ReactNode
   contentChildren?: ReactNode
-  footerChildren?: ReactNode
 }
 
-export const CardWithBorder = ({
-  headerChildren,
-  contentChildren,
-  footerChildren,
-}: Props) => {
+export const CardWithBorder = ({ headerChildren, contentChildren }: Props) => {
   return (
-    <div className="relative">
-      <div
-        className={`w-full h-[280px] lg:w-[280px] lg:h-[380px] border-2 absolute border-solid border-accent top-3 left-3 z-0`}
-      />
+    <div>
       <Card
-        className={`w-full h-[280px] lg:w-[280px] lg:h-[380px] z-10 relative`}
+        className={` w-[300px] h-[420px] z-10 relative border-[6px] border-accent`}
       >
-        <CardHeader>{headerChildren}</CardHeader>
-        <CardContent className="text-sm">{contentChildren}</CardContent>
-        {footerChildren && <CardFooter>{footerChildren}</CardFooter>}
+        <CardHeader className="h-[80px] text-xl mb-2 text-center flex justify-center items-center">
+          {headerChildren}
+        </CardHeader>
+        <CardContent className="md:text-lg lg:text-base h-[250px]">
+          <Separator className="mb-4" />
+          {contentChildren}
+        </CardContent>
+        <CardFooter className="flex items-center justify-center ">
+          <Button>Learn more</Button>
+        </CardFooter>
       </Card>
     </div>
   )

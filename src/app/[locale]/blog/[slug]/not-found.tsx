@@ -8,7 +8,7 @@ export default function NotFound() {
       <h2 className="text-center text-5xl">Szukana strona nie istnieje</h2>
       <p className="mt-6 text-center text-2xl">Ślimak zabłądził</p>
       <p className="mt-6 text-center">
-        <Link className={buttonVariants({ variant: 'default' })} href="/">
+        <Link className={buttonVariants({ variant: 'default' })} href="/public">
           Wróć do strony głównej
         </Link>
       </p>

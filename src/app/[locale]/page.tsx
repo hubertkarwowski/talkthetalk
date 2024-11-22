@@ -7,7 +7,7 @@ import { Pricing } from '@/components/Sections/Pricing/Pricing'
 import { Services } from '@/components/Sections/Services/Services'
 import { Testimonials } from '@/components/Sections/Testimonials/Testimonials'
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Hero />

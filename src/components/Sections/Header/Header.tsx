@@ -2,10 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Link } from '@/i18n/routing'
 import { Menu } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
+import LocaleSwitcher from '@/components/customUi/LocaleSwitcher'
 import { navLinks } from '@/components/Sections/Header/navLinks'
 
 import logo from '../../../../public/logo.png'
@@ -13,12 +15,14 @@ import logo from '../../../../public/logo.png'
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const t = useTranslations('header')
 
   const ref = useRef<any | null>(null)
 
   const onMenuClick = () => {
     setIsOpen(!isOpen)
   }
+
   useEffect(() => {
     const handleOutSideClick = (event: Event) => {
       if (!ref.current?.contains(event.target)) {
@@ -35,7 +39,7 @@ export const Header = () => {
 
   return (
     <header
-      className="fixed z-[9999] w-full bg-primary text-primary-foreground py-6 px-mobile-global-spacer md:px-md-global-spacer lg:px-lg-global-spacer"
+      className="fixed z-[9999] w-full bg-primary text-primary-foreground py-6 px-mobile-global-spacer md:px-md-global-spacer xl:px-lg-global-spacer border-accent border-b-8 text-sm xl:text-base"
       ref={ref}
     >
       <div className="container mx-auto grid grid-cols-2 lg:grid-cols-3 items-center">
@@ -46,7 +50,7 @@ export const Header = () => {
         </div>
 
         {/* Navigation Links */}
-        <ul className="hidden lg:flex lg:col-span-2 justify-center items-center gap-4 font-semibold text-base">
+        <ul className="hidden lg:flex lg:col-span-2 justify-center items-center gap-4 font-semibold">
           {navLinks.map((nav, index) => (
             <Link
               key={index}
@@ -56,6 +60,8 @@ export const Header = () => {
               {nav.title}
             </Link>
           ))}
+
+          <LocaleSwitcher />
           <p
             className={`list-none text-center p-4   cursor-pointer`}
             onClick={onMenuClick}
@@ -67,8 +73,7 @@ export const Header = () => {
         {/* Menu */}
         <div className="flex lg:hidden justify-end">
           <Menu
-            className=" cursor-pointer"
-            color="white"
+            className=" cursor-pointer text-accent"
             onClick={onMenuClick}
             size={30}
           />
@@ -94,7 +99,7 @@ export const Header = () => {
           className={`list-none w-full text-center p-4 bg-accent text-accent-foreground  transition-all cursor-pointer`}
           onClick={onMenuClick}
         >
-          Switch language
+          {t('switch')}
         </p>
       </div>
     </header>

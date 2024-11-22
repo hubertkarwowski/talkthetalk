@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import {
   Table,
   TableBody,
@@ -13,8 +11,6 @@ import { Contact } from '@/components/customUi/Contact'
 import { Section } from '@/components/customUi/Section'
 import { Pricing } from '@/components/Sections/Pricing/Pricing'
 import { Services } from '@/components/Sections/Services/Services'
-
-import abstract1 from '../../../../public/abstract_1.svg'
 
 export default function AboutMe() {
   const lessons = [
@@ -42,11 +38,6 @@ export default function AboutMe() {
         subtitle="Here is our pricing card"
         secondaryColor
       >
-        <div
-          className={`absolute w-[100px] md:w-[150px] -bottom-28 right-10 z-10`}
-        >
-          <Image src={abstract1} alt="abstract particles" />
-        </div>
         <Table className="max-w-[700px] mx-auto">
           <TableCaption>
             Zajęcia odbywają się online i wystawiamy faktury.

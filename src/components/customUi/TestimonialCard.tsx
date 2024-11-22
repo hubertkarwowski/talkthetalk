@@ -15,7 +15,9 @@ export const TestimonialCard = ({ fullName, userTitle, review }: Props) => {
       <div
         className={`w-full lg:w-[400px] h-[300px] border-2 absolute border-solid border-accent top-3 left-3 z-0`}
       />
-      <Card className={`w-full lg:w-[400px] h-[300px] z-10 relative`}>
+      <Card
+        className={`w-full lg:w-[400px] h-[300px] z-10 relative bg-secondary`}
+      >
         <CardHeader>
           <div className="px-4">
             <div className="flex gap-1 mb-2">

@@ -1,7 +1,7 @@
 'use client'
 
 import { useForm, ValidationError } from '@formspree/react'
-import { LocateFixedIcon, Mail, PhoneIcon } from 'lucide-react'
+import { Mail, MapPin, PhoneIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -14,24 +14,24 @@ export const ContactForm = () => {
     return <p>Thanks for joining!</p>
   }
   return (
-    <div className="bg-secondary text-secondary-foreground p-2 xl:flex xl:flex-row xl:h-[600px] relative">
-      <div className="flex flex-col justify-between text-center bg-gray-700 p-8 lg:text-left xl:w-[40%]">
+    <div className="bg-primary text-secondary-foreground p-2 xl:flex xl:flex-row xl:h-[600px] relative border-8 border-accent">
+      <div className="flex flex-col justify-between text-center p-8 lg:text-left xl:w-[40%]">
         <div>
-          <h2 className="text-3xl font-semibold">Contact Form</h2>
+          <h2 className="text-3xl font-semibold text-accent">Contact Form</h2>
           <p>Say something to start a live chat!</p>
         </div>
         <div className="space-y-6 mt-12">
           <span className="flex items-center">
-            <PhoneIcon className="mr-2" />
+            <PhoneIcon className="mr-2 text-accent" />
             +48 536 056 177
           </span>
           <span className="flex items-center mt-2">
-            <Mail className="mr-2" />
+            <Mail className="mr-2 text-accent" />
             talkthetalktutoringpl@gmail.com
           </span>
           <span className="flex items-center mt-2">
-            <LocateFixedIcon className="mr-2" />
-            132 Dartmouth Street Boston, Massachusetts 02156 United States
+            <MapPin className="mr-2 text-accent" />
+            132 Dartmouth Street Boston
           </span>
         </div>
         <div></div>
@@ -79,7 +79,7 @@ export const ContactForm = () => {
             errors={state.errors}
           />
         </div>
-        <Button type="submit" disabled={state.submitting} className="mt-6">
+        <Button type="submit" disabled={state.submitting} className="mt-6 ml-0">
           Send Message
         </Button>
       </form>

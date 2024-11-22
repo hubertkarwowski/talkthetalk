@@ -60,29 +60,27 @@ export const Pricing = () => {
           <TabsContent key={plan.id} value={plan.id} className="mt-12">
             <Card className="z-10 relative text-center md:text-left">
               <CardContent className="p-0 flex h-[440px] flex-col md:flex-row">
-                <div className="bg-amber-200 h-[220px] md:h-[440px] md:w-1/2 p-6 md:p-12 flex items-center justify-between">
+                <div className="bg-[#EAEAEA] h-[220px] md:h-[440px] md:w-1/2 p-6 md:p-12 flex items-center justify-between">
                   <div className="h-full flex flex-col space-y-2 md:space-y-6 my-auto justify-center items-center md:items-start mx-auto">
                     <div className="flex justify-center gap-2 items-center">
                       <div className="p-4 w-fit bg-accent rounded">
                         {plan.icon}
                       </div>
-                      <h2 className="text-xl md:text-3xl font-semibold">
+                      <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold">
                         {plan.title}
                       </h2>
                     </div>
                     <p>{plan.description}</p>
                     <p>
-                      <span className="font-bold text-xl md:text-2xl">
+                      <span className="font-extrabold text-xl md:text-2xl lg:text-3xl">
                         {plan.price}
                       </span>
                       /lesson
                     </p>
-                    <Button className="w-fit" size="lg">
-                      Book a lesson
-                    </Button>
+                    <Button className="w-fit">Book a lesson</Button>
                   </div>
                 </div>
-                <div className="bg-amber-400 h-[220px] md:h-[440px] md:w-1/2 p-6 md:p-12 flex items-center justify-between">
+                <div className="bg-[#F2F2F2] h-[220px] md:h-[440px] md:w-1/2 p-6 md:p-12 flex items-center justify-between">
                   <div className="h-full flex flex-col space-y-6 my-auto justify-center">
                     {plan.perks.map((perk) => (
                       <CheckItem
@@ -98,7 +96,7 @@ export const Pricing = () => {
         ))}
       </Tabs>
       <div className="flex w-full mx-auto">
-        <Button className="mt-24 mx-auto" size="lg" asChild>
+        <Button className="mt-24 mx-auto" asChild>
           <Link href="/public">Check the pricing plan</Link>
         </Button>
       </div>

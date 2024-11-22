@@ -17,7 +17,7 @@ export default function Footer() {
   const pathname = usePathname()
 
   return (
-    <footer className="bg-primary text-primary-foreground lg:px-lg-global-spacer md:px-md-global-spacer px-mobile-global-spacer">
+    <footer className="bg-primary text-primary-foreground lg:px-lg-global-spacer md:px-md-global-spacer px-mobile-global-spacer border-accent border-t-8">
       <div className="container mx-auto py-14">
         <Separator className="mb-12" />
 
