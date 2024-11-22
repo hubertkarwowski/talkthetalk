@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Link } from '@/i18n/routing'
 import { Menu } from 'lucide-react'
-import { useTranslations } from 'next-intl'
 
 import LocaleSwitcher from '@/components/customUi/LocaleSwitcher'
 import { navLinks } from '@/components/Sections/Header/navLinks'
@@ -15,7 +14,6 @@ import logo from '../../../../public/logo.png'
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  const t = useTranslations('header')
 
   const ref = useRef<HTMLElement | null>(null)
 
@@ -62,12 +60,6 @@ export const Header = () => {
           ))}
 
           <LocaleSwitcher />
-          <p
-            className={`list-none text-center p-4   cursor-pointer`}
-            onClick={onMenuClick}
-          >
-            Switch language
-          </p>
         </ul>
 
         {/* Menu */}
@@ -95,12 +87,9 @@ export const Header = () => {
             {nav.title}
           </Link>
         ))}
-        <p
-          className={`list-none w-full text-center p-4 bg-accent text-accent-foreground  transition-all cursor-pointer`}
-          onClick={onMenuClick}
-        >
-          {t('switch')}
-        </p>
+        <div className={`bg-accent list-none w-full text-center`}>
+          <LocaleSwitcher />
+        </div>
       </div>
     </header>
   )

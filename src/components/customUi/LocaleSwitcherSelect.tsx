@@ -4,6 +4,7 @@ import { ChangeEvent, ReactNode, useTransition } from 'react'
 import { useParams } from 'next/navigation'
 import { Locale, usePathname, useRouter } from '@/i18n/routing'
 import clsx from 'clsx'
+import { ChevronDown } from 'lucide-react'
 
 type Props = {
   children: ReactNode
@@ -37,20 +38,24 @@ export default function LocaleSwitcherSelect({
   return (
     <label
       className={clsx(
-        'relative text-primary-foreground bg-secondary',
-        isPending && 'transition-opacity [&:disabled]:opacity-30'
+        'w-full max-w-xs relative inline-block lg:w-[100px] text-primary-foreground',
+        isPending && 'transition-opacity [&:disabled]:opacity-50'
       )}
     >
       <p className="sr-only">{label}</p>
-      <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
-        defaultValue={defaultValue}
-        disabled={isPending}
-        onChange={onSelectChange}
-      >
-        {children}
-      </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
+      <div className="relative bg-secondary ">
+        <select
+          className="w-full appearance-none rounded-lg bg-transparent py-3 pl-4 pr-8 text-sm font-medium text-primary-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+          defaultValue={defaultValue}
+          disabled={isPending}
+          onChange={onSelectChange}
+        >
+          {children}
+        </select>
+        <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-accent">
+          <ChevronDown />
+        </div>
+      </div>
     </label>
   )
 }

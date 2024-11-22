@@ -8,6 +8,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
 import Footer from '@/components/customUi/Footer'
+import Providers from '@/components/customUi/ProgressBarProvider'
 import { ScrollToTop } from '@/components/customUi/ScrollToTop'
 import { Header } from '@/components/Sections/Header/Header'
 import { playfairDisplay, poppins } from '@/app/fonts'
@@ -83,10 +84,12 @@ export default async function RootLayout({
     >
       <body className={`antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <div className="pt-[10.1rem]">{children}</div>
-          <ScrollToTop />
-          <Footer />
+          <Providers>
+            <Header />
+            <div className="pt-[10.1rem]">{children}</div>
+            <ScrollToTop />
+            <Footer />
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
