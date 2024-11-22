@@ -17,15 +17,15 @@ export const Header = () => {
   const pathname = usePathname()
   const t = useTranslations('header')
 
-  const ref = useRef<any | null>(null)
+  const ref = useRef<HTMLElement | null>(null)
 
   const onMenuClick = () => {
     setIsOpen(!isOpen)
   }
 
   useEffect(() => {
-    const handleOutSideClick = (event: Event) => {
-      if (!ref.current?.contains(event.target)) {
+    const handleOutSideClick = (event: MouseEvent) => {
+      if (!ref.current?.contains(event.target as Node)) {
         setIsOpen(false)
       }
     }

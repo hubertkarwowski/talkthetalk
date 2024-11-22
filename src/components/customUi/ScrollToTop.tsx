@@ -8,25 +8,22 @@ export const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // if the user scrolls down, show the button
-      window.scrollY > 200 ? setIsVisible(true) : setIsVisible(false)
+      setIsVisible(window.scrollY > 200)
     }
-    // listen for scroll events
     window.addEventListener('scroll', toggleVisibility)
 
-    // clear the listener on component unmount
     return () => {
       window.removeEventListener('scroll', toggleVisibility)
     }
   }, [])
 
-  // handles the animation when scrolling to the top
   const scrollToTop = () => {
-    isVisible &&
+    if (isVisible) {
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
       })
+    }
   }
 
   return (
